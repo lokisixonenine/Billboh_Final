@@ -16,7 +16,7 @@
     "heroku-postbuild": "npm run build"
   },
   "keywords": [],
-  "author": "John Desrosiers",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.0.2",
