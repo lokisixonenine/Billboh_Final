@@ -1,4 +1,4 @@
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const mongoose = require("../config/mongoose");
 
 const SALT_ROUNDS = 12;
