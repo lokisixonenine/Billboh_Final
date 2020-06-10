@@ -5,14 +5,14 @@
 We rely on our mobile phones more and more for just about everything. When traveling, we use it to get directions, translate foreign languages, and other tasks. Billboh helps enhance your travel adventures by providing facts and news based on your current location. 
 
 ## Technology Used
-MongoDB
-Express
-ReactJS
-NodeJS
-JavaScript Web Token
-Axios
-bcrypt
-jsonwebtoken
+* MongoDB
+* Express
+* ReactJS
+* NodeJS
+* JavaScript Web Token
+* Axios
+* bcrypt
+* jsonwebtoken
 
 
 ## Team Members and Roles
