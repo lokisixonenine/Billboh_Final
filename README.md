@@ -16,9 +16,11 @@ We rely on our mobile phones more and more for just about everything. When trave
 
 
 ## Team Members and Roles
-Art - Geolocation API code
-Cara - Front end, styling, design
-Greg - CSS, Historical API Code
-Jaycee - Login and news API Code
+* Art - Geolocation API code
+* Cara - Front end, styling, design
+* Greg - CSS, Historical API Code
+* Jaycee - Login and news API Code
 
-
+## Deployment
+This app is deployed at:
+https://billboh.herokuapp.com/ 
