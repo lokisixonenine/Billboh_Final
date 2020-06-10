@@ -9,6 +9,11 @@ MongoDB
 Express
 ReactJS
 NodeJS
+JavaScript Web Token
+Axios
+bcrypt
+jsonwebtoken
+
 
 ## Team Members and Roles
 Art - Geolocation API code
