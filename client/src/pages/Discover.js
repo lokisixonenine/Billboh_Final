@@ -15,6 +15,10 @@ class Discover extends Component {
     this.getCoordinates = this.getCoordinates.bind(this);
     this.reverseGeocodeCoordinates = this.reverseGeocodeCoordinates.bind(this);
   }
+  componentDidMount() {
+    this.getLocation();
+  }
+
   getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -39,7 +43,8 @@ class Discover extends Component {
       .then(response => response.json())
       .then(data =>
         this.setState({
-          userAddress: data.results[0].formatted_address
+          userCity: data.results[5].address_components[0].long_name,
+          userState: data.results[5].address_components[2].long_name
         })
       )
       .catch(error => alert(error));
@@ -65,19 +70,11 @@ class Discover extends Component {
   render() {
     return (
       <div className="App">
-        <h2>React Geolocation Test</h2>
-        <button onClick={this.getLocation}>Get Coordinates</button>
-        <h4>HTML5 Coordinates</h4>
-        <p>Latitude: {this.state.latitude}</p>
-        <p>Longitude: {this.state.longitude}</p>
-        <h4>Google Maps Reverse Geocoding</h4>
-        <p>Location : {this.state.userAddress}</p>
-        {this.state.latitude && this.state.longitude ? (
-          <img
-            src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.latitude},${this.state.longitude}&zoom=14&size=400x300&sensor=false&markers=color:red%7C${this.state.latitude},${this.state.longitude}&key=AIzaSyB80uGKY7XTuZUMoZlgQeUH6MHciBXkNWM`}
-            alt=""
-          />
-        ) : null}
+        <h2>Billboh</h2>
+
+        <h4>
+          You're currently in: {this.state.userCity}, {this.state.userState}{" "}
+        </h4>
       </div>
     );
   }
