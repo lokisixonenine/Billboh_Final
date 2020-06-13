@@ -10,7 +10,7 @@ function About() {
     <div>
       <Hero backgroundImage="https://www.hobbitontours.com/media/1174/hobbiton-movie-set-30.jpg">
         <h1>Billboh's Travels</h1>
-        <h2>A travel history app for history lovers!</h2>
+        <h2>A travel app for news and history lovers!</h2>
       </Hero>
       <Container style={{ marginTop: 30 }}>
         <Row>
@@ -22,17 +22,21 @@ function About() {
           <Col size="md-12">
             <br></br>
             <p>
-              History is amazing, complex, intriguing, and can tell us so much
-              about the current world we live in. But how often on a daily
-              basis, do we miss out on the valuable history around us anywhere
-              and everywhere we go? Well, NO LONGER! Billboh to the rescue!{" "}
+              Our world is so compled and constantly changing! History is
+              amazing, complex, intriguing, and can tell us so much about the
+              current world we live in. But how often on a daily basis, do we
+              miss out on the valuable information around us anywhere and
+              everywhere we go? Well, NO LONGER! Billboh to the rescue!{" "}
             </p>
 
             <p>
               Billboh is an app that not only helps you find amazing cool
-              historical facts, and news delivers it without even the click of a
-              button. It will take your location and automatically search nearby
-              for you and populate results.{" "}
+              historical facts and news, but it will deliver it to you without
+              even the click of button! It will take your location and
+              automatically search nearby for you and populate results, giving
+              you a bunch of cool history on the city your visiting and also the
+              latest news! Not only that, but Billboh gives you super fun random
+              facts about events in history.{" "}
             </p>
 
             <p>
@@ -43,7 +47,7 @@ function About() {
             </p>
             <br></br>
             <h2>
-              <strong>About San Diego</strong>
+              <strong>Overview and History of San Diego</strong>
             </h2>
             <br></br>
             <p>
