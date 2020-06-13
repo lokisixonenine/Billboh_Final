@@ -6,12 +6,19 @@ export default ({ props }) => {
     <div>
       {/* <div >
     <img src="..." className="card-img-top" alt="..."/> */}
-      <div className="card-body">
-        <h5 className="card-title">YEAR: {props.year}</h5>
-        <p className="card-text">{props.text}4</p>
-        <a href="#" className="btn btn-primary">
+      <div className="card-body" style={{ borderbottom: "dotted, grey, 3px" }}>
+        <h5 className="card-title" style={{ color: "green" }}>
+          Year: {props.year}
+        </h5>
+        <p
+          className="card-text"
+          style={{ fontFamily: "Bookman, URW Bookman L, serif" }}
+        >
+          {props.text}
+        </p>
+        {/* <a href="#" className="btn btn-primary">
           Go somewhere
-        </a>
+        </a> */}
       </div>
       {/* </div> */}
     </div>

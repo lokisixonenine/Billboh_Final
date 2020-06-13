@@ -23,7 +23,7 @@ export default ({ props }) => (
         <h5 className="card-title">{props.title}</h5>
         <p className="card-text">{props.publishedAt}</p>
         <a href={props.url} className="btn btn-primary">
-          Go somewhere
+          View Article >>>
         </a>
       </div>
     </div>
