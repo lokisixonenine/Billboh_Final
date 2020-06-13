@@ -93,16 +93,16 @@ class About extends Component {
 
 const Body = props => {
   const city = props.city;
-  const [wiki, setWiki] = useState([]);
+//   const [wiki, setWiki] = useState([]);
 
-  const wikiSearch = () => {
-    API.wikiFirstParagraph(city).then(data => {
-      setWiki(data);
-      console.log(wiki);
-    });
-  };
+//   const wikiSearch = () => {
+//     API.wikiFirstParagraph(city).then(data => {
+//       setWiki(data);
+//       console.log(wiki);
+//     });
+//   };
 
-  wikiSearch();
+//   wikiSearch();
 
   return (
     <div>
