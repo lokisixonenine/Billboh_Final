@@ -1,7 +1,15 @@
-import React, { Component } from "react";
+import React, { useState, Component } from "react";
 // import API from "../utils/API";
 // import Card from "../components/Card";
 // import Alert from "../components/Alert";
+// import News from "./News";
+import Moment from "moment";
+import NewsCard from "../components/NewsStuff";
+import API from "../utils/API";
+import Container from "../components/Container";
+// import Row from "../components/Row";
+// import Col from "../components/Col";
+import Hero from "../components/Hero";
 
 class Discover extends Component {
   constructor(props) {
@@ -15,6 +23,10 @@ class Discover extends Component {
     this.getCoordinates = this.getCoordinates.bind(this);
     this.reverseGeocodeCoordinates = this.reverseGeocodeCoordinates.bind(this);
   }
+  componentDidMount() {
+    this.getLocation();
+  }
+
   getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -39,7 +51,8 @@ class Discover extends Component {
       .then(response => response.json())
       .then(data =>
         this.setState({
-          userAddress: data.results[0].formatted_address
+          userCity: data.results[5].address_components[1].long_name,
+          userState: data.results[5].address_components[3].long_name
         })
       )
       .catch(error => alert(error));
@@ -62,24 +75,107 @@ class Discover extends Component {
         alert("An unknown error occured.");
     }
   }
+
   render() {
+    // const officialCity = this.state.userCity;
+    // console.log("officialcity", officialCity);
+    const dateNews = Moment().format("MM/D/YYYY");
+
     return (
       <div className="App">
-        <h2>React Geolocation Test</h2>
-        <button onClick={this.getLocation}>Get Coordinates</button>
-        <h4>HTML5 Coordinates</h4>
-        <p>Latitude: {this.state.latitude}</p>
-        <p>Longitude: {this.state.longitude}</p>
-        <h4>Google Maps Reverse Geocoding</h4>
-        <p>Location : {this.state.userAddress}</p>
-        {this.state.latitude && this.state.longitude ? (
-          <img
-            src={`https://maps.googleapis.com/maps/api/staticmap?center=${this.state.latitude},${this.state.longitude}&zoom=14&size=400x300&sensor=false&markers=color:red%7C${this.state.latitude},${this.state.longitude}&key=AIzaSyB80uGKY7XTuZUMoZlgQeUH6MHciBXkNWM`}
-            alt=""
-          />
-        ) : null}
+        <Hero backgroundImage="https://image.yayimages.com/1600/photo/abstract-newspaper-background-17527654.jpg">
+          <h1 style={{ fontfamily: "Jazz LET, fantasy", fontsize: 60 }}>
+            News
+          </h1>
+
+          <h5>
+            Town: {this.state.userCity}, {this.state.userState}
+          </h5>
+          <h5>Date: {dateNews}</h5>
+          <h5>Billboh's Tribune</h5>
+        </Hero>
+        <Container style={{ marginTop: 30 }}>
+          <Body city={this.state.userCity} />
+        </Container>
       </div>
     );
   }
 }
+
+const Body = props => {
+  // const SomeName = () => {
+  // const [city, setCity] = useState("");
+  // const [date, setDate] = useState("");
+  // const city = props.city;
+  const city = "san diego";
+  const date = Moment().format("YYYYMMDD");
+  const [news, setNews] = useState([]);
+
+  // handleSearch();
+
+  // API.scrape();
+
+  const handleSearch = () => {
+    API.getNews(city, date).then(({ data }) => {
+      setNews(data.articles);
+      console.log(data);
+    });
+  };
+
+  handleSearch();
+  // const newsDate = Moment().format("YYYYMMD");
+  console.log("discover city", city);
+  return (
+    <div>
+      <br></br>
+      <h4 style={{ fontFamily: "Impact, fantasy" }}>
+        <strong>
+          Don't miss a beat and read up on today's news for {city}!
+        </strong>
+      </h4>
+      <br></br>
+      <br></br>
+      <div className="row">
+        {news.map(a => (
+          <NewsCard props={a} />
+        ))}
+        {/* {news.map((a) => (
+                    <NewsCard key={a.publishedAt} props={a} />
+                    ))} */}
+      </div>
+      {/* <h1>{city}</h1>
+      <h1>{date}</h1> */}
+      {/* <h2></h2>
+      <div className="row">
+        <div className="col-2"></div>
+
+        <div className="col-8">
+
+          {/* <input
+            placeholder="Where are you (city name?)"
+            onChange={e => setCity(Discover.userCity)}
+          />
+          <input
+            placeholder="What date do you want? (year-month-day)"
+            onChange={e => setDate(newsDate)}
+          />
+          <button onClick={handleSearch} className="btn btn-warning btn-lg">
+            Submit
+          </button> */}
+
+      {/* <div className="row">
+            {news.map(a => (
+              <NewsCard props={a} />
+            ))}
+            {/* {news.map((a) => (
+                    <NewsCard key={a.publishedAt} props={a} />
+                    ))} */}
+      {/* </div>
+        </div>
+        <div className="col-2"></div> */}
+      {/* // </div> */}
+    </div>
+  );
+};
+
 export default Discover;

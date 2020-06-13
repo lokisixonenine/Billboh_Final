@@ -33,7 +33,7 @@ function Navbar() {
                   : "nav-link"
               }
             >
-              Discover
+              News
             </Link>
           </li>
           {/* <li className="nav-item">
@@ -44,7 +44,7 @@ function Navbar() {
               Search
             </Link>
           </li> */}
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link
               to="/news"
               className={
@@ -55,7 +55,7 @@ function Navbar() {
             >
               News
             </Link>
-          </li>
+          </li> */}
           <li className="nav-item">
             <Link
               to="/facts"

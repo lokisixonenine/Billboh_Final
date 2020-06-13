@@ -11,7 +11,7 @@ export default {
   getNews: (city, date) => {
     return axios.get(
       `https://newsapi.org/v2/everything?qInTitle=${city}&from=${date ||
-        "2020-5-25"}&sortBy=publishedAt&apiKey=1c73269edb4c41b7be5ddcf1fde33a80`
+        "2020-5-25"}&sortBy=publishedAt&apiKey=10c95d1ce36e4324a1f6622cc69ea8f2`
     );
   },
   testWikiAPI: () => {
