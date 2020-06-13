@@ -7,8 +7,8 @@ import Moment from "moment";
 import NewsCard from "../components/NewsStuff";
 import API from "../utils/API";
 import Container from "../components/Container";
-import Row from "../components/Row";
-import Col from "../components/Col";
+// import Row from "../components/Row";
+// import Col from "../components/Col";
 import Hero from "../components/Hero";
 
 class Discover extends Component {
