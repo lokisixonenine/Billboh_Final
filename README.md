@@ -1,4 +1,4 @@
-# BillBoh -Historical Facts App
+# BillBoh - Historical Facts App
 
 ## User Story
 
